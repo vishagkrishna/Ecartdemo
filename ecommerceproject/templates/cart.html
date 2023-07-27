@@ -11,12 +11,12 @@ thi is the cart page .proceed to review your Items and place the order
 <div>
     <div class="text-center">
         <br>
-        <h1 class="text-center my title">
+        <h1 class="text-center my-title">
             your shopping cart is empty
         </h1>
         <br>
         <p class="text-center">
-            please click <a href="{% url 'shop:allProdCart' %}">Here</a>to continue shopping.
+            please click <a href="{% url 'shop:allProdCat' %}"> Here </a>to continue shopping.
         </p>
     </div>
 </div>
@@ -29,6 +29,8 @@ thi is the cart page .proceed to review your Items and place the order
         </h1>
         <br>
     </div>
+</div>
+
 <div class="row mx-auto">
     <div class="col-12 col-sm-12 col-md-12 col-lg-6 text-center">
         <table class="table my_custom_table">
@@ -42,10 +44,10 @@ thi is the cart page .proceed to review your Items and place the order
             <tbody>
             {% for cart_items in cart_items %}
             <tr>
-                <td>
-                    <a href="cart_item.product.get_absolute_url"><img src="{{cart_items.product.image.url}}" alt="" style="width=100px;height;100px;" class="float-left rounded custom_image"></a>
+                <td style="width=50px;height;30px;">
+                    <a href="cart_item.products.get_absolute_url"> <img src="{{cart_items.product.image.url}}" height="200" width="300" class="float-left-rounded.custom_image"> </a>
                 </td>
-                <td class="text-lef">
+                <td class="text-lef" >
                     {{cart_items.product.name}}
                     <br>
                     SKU: {{cart_items.product_id}}
@@ -106,7 +108,7 @@ thi is the cart page .proceed to review your Items and place the order
         </div>
     </div>
 </div>
-</div>
+
 
 {% endif %}
 {% endblock %}
